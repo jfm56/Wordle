@@ -40,3 +40,6 @@ class Wordle:
                 return
 
         print (f"Game over! The correct word was: {secret_word}")
+
+    if __name__ == "__main__":
+        wordle()
