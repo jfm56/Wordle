@@ -4,7 +4,7 @@ import random
 class Wordle:
     """Generates word, checks guess, and performs main loop"""
 
-    WORD_LIST = ["puppy"]
+    WORD_LIST = ["puppy", "apple", "grape", "lemon", "brick"]
 
     @staticmethod
     def generate_word():
