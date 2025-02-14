@@ -2,20 +2,24 @@
 import random
 
 class Wordle:
-    """Generates word, chesks guess, and preforms main loop"""
+    """Generates word, checks guess, and performs main loop"""
+
+    WORD_LIST = ["puppy"]
+
     @staticmethod
     def generate_word():
         """Generate a five letter word."""
-        return "puppy"
+        return random.choice(Wordle.WORD_LIST)
 
     @staticmethod
     def check_guess(secret_word, guess):
         """Check the guessed word and provide feedback."""
-        feedback_symbols = [("✅" * (g == s)) +
-                        ("❓" * (g in secret_word and g !=s)) +
-                        ("❌" * (g not in secret_word))
-                        for g, s in zip(guess, secret_word)
-    ]
+        feedback_symbols = [
+            ("✅" * (g == s)) +
+            ("❓" * (g in secret_word and g !=s)) +
+            ("❌" * (g not in secret_word))
+            for g, s in zip(guess, secret_word)
+        ]
         return "".join(feedback_symbols)
 
     @staticmethod
@@ -30,16 +34,16 @@ class Wordle:
             guess = input (f"Attempt {attempt}: Enter a five-letter word: ").lower()
 
             if len(guess) != 5:
-                print("Invalad input. please enter exactly five letters.")
+                print("Invalid input. please enter exactly five letters.")
                 continue
 
             print ("Feedback:", Wordle.check_guess(secret_word, guess))
 
             if guess == secret_word:
-                print("Congratulations! You guessed the word corresctly.")
+                print("Congratulations! You guessed the word correctly.")
                 return
 
         print (f"Game over! The correct word was: {secret_word}")
 
-    if __name__ == "__main__":
-        wordle()
+if __name__ == "__main__":
+    Wordle.wordle()
