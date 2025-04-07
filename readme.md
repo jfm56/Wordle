@@ -1,103 +1,101 @@
-# Wordle Game 🎮🔠
+```markdown
+# 🎮 Wordle Game (Python Edition)
 
-## **Description**
-This Wordle-style game challenges players to guess a random five-letter word within six attempts.
-It includes built-in feedback using emoji indicators to guide players:
-
-- ✅ Correct letter & correct position → ✅
-- ✅ Correct letter but wrong position → ❓
-- ✅ Incorrect letter → ❌
-
-The implementation utilizes a combination of static, class, and instance methods for efficient handling of calculations and history.
-
-To ensure accuracy and reliability, the game is thoroughly tested using:
-
-- ✅ **Pytest** (unit testing)
-- ✅ **Pylint** (code quality/linting)
-- ✅ **Coverage (cov)** (test coverage measurement)
+A command-line Wordle-style game where players guess a secret five-letter word within six attempts. Emoji-based feedback guides players after each guess.
 
 ---
 
-## **📌 Setup & Installation**
+## 📦 Features
 
-### **Step 1️⃣: Clone the Repository**
-```sh
+- ✅ **Emoji Feedback**:
+  - ✅ = Correct letter & correct position
+  - ❓ = Correct letter but wrong position
+  - ❌ = Incorrect letter
+- 🧠 Encapsulated logic using a `Wordle` class
+- 🧪 Fully tested using **Pytest**
+- 📏 Code quality checked using **Pylint**
+- 🧪📊 Test coverage tracked with **Coverage.py**
+
+---
+
+## 📁 Project Structure
+
+```
+Wordle/
+├── Wordle/               # Package directory
+│   └── __init__.py       # Contains the Wordle class and game logic
+├── play.py               # Entry point to run the game
+├── test_Wordle.py        # Unit tests
+├── requirements.txt      # Project dependencies
+├── .pylintrc             # Pylint config
+├── pytest.ini            # Pytest config
+├── .coverage             # Test coverage cache
+├── README.md             # You're reading it
+```
+
+---
+
+## 🧰 Setup & Installation
+
+### 1️⃣ Clone the Repository
+
+```bash
 git clone https://github.com/jfm56/Wordle.git
 cd Wordle
 ```
 
-### **Step 2️⃣: Create a Virtual Environment**
-```sh
+### 2️⃣ Create & Activate a Virtual Environment
+
+```bash
 python -m venv venv
+source venv/bin/activate      # Mac/Linux
+venv\Scripts\activate         # Windows
 ```
 
-### **Step 3️⃣: Activate the Virtual Environment**
-- **Mac/Linux:**  
-  ```sh
-  source venv/bin/activate
-  ```
-- **Windows (Command Prompt):**  
-  ```sh
-  venv\Scripts\activate
-  ```
-- **Windows (PowerShell):**  
-  ```powershell
-  venv\Scripts\Activate.ps1
-  ```
+### 3️⃣ Install Dependencies
 
-### **Step 4️⃣: Install Dependencies**
-```sh
+```bash
 pip install -r requirements.txt
 ```
 
 ---
 
-## **📌 Running Tests**
-To ensure the Wordle game functions correctly, run:
-```sh
+## ▶️ Running the Game
+
+```bash
+python play.py
+```
+
+---
+
+## 🧪 Running Tests, Linting & Coverage
+
+```bash
 pytest --pylint --cov
 ```
 
-- ✅ **Pytest** runs unit tests.
-- ✅ **Pylint** checks for code style issues.
-- ✅ **Coverage (cov)** measures test coverage.
+This will:
+- Run your unit tests with Pytest
+- Lint your code with Pylint
+- Show test coverage with Coverage
 
 ---
 
-## **🛠 How to Play?**
-Run the game using:
-```sh
-python wordle.py
-```
+## 🎮 How to Play
 
-### **Gameplay Instructions**  
-1️⃣ Enter a five-letter word when prompted.  
-2️⃣ Receive emoji-based feedback (✅ ❓ ❌).  
-3️⃣ You have six attempts to guess the correct word.  
-4️⃣ If correct → You win! 🎉  
-5️⃣ If out of attempts → The correct word is revealed.  
+- Enter a five-letter word when prompted.
+- Get feedback using emoji:
+  - ✅: correct letter & position
+  - ❓: correct letter, wrong position
+  - ❌: incorrect letter
+- Guess the word within 6 tries.
 
 ---
 
-## **🎯 Example Gameplay**
-```
-🎮 Welcome to Wordle! You have 6 attempts to guess a five-letter word.
+## 🧑‍💻 Author
 
-Attempt 1: Enter a five-letter word: apple  
-Feedback: ✅❌❌❌❌  
-
-Attempt 2: Enter a five-letter word: happy  
-🎉 Congratulations! You guessed the word correctly.
-```
+Made with ❤️ by [jfm56](https://github.com/jfm56)
 
 ---
 
-## **📜 Code Structure**
 ```
-Wordle/
-│── wordle.py        # Main game logic
-│── __init__.py      # Module initialization
-│── README.md        # Project documentation
-│── requirements.txt # Dependencies
-```
-
